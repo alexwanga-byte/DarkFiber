@@ -1,0 +1,140 @@
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.app-shell::before {
+  background: #ffd6b8;
+  top: -120px;
+  right: -80px;
+}
+
+.app-shell::after {
+  background: #a7d7d8;
+  bottom: -160px;
+  left: -120px;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-card {
+  background: #fff7ec;
+  border-radius: 24px;
+  padding: 2rem 2.5rem;
+  border: 1px solid rgba(132, 108, 90, 0.18);
+  box-shadow: 0 30px 60px rgba(14, 28, 46, 0.08);
+  animation: rise 0.7s ease-out both;
+}
+
+.hero-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.6rem, 2vw, 2.1rem);
+  color: #0b1c2d;
+}
+
+.hero-card p {
+  margin: 0 0 1.5rem;
+  color: #485361;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hero-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #a0836b;
+}
+
+.hero-value {
+  font-weight: 600;
+  color: #1a2b3c;
+}
+
+.hero-badge {
+  background: #0b1c2d;
+  color: #fef4e8;
+  padding: 1.2rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 18px 40px rgba(11, 28, 45, 0.25);
+  animation: float 2.8s ease-in-out infinite;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-badge {
+    justify-self: flex-start;
+  }
+}

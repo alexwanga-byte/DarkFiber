@@ -1,0 +1,143 @@
+.inbox {
+  background: #0b1c2d;
+  color: #f8f1e8;
+  border-radius: 22px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 24px 50px rgba(10, 22, 36, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 320px;
+}
+
+.inbox.empty {
+  align-items: center;
+  text-align: center;
+}
+
+.inbox-header h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.inbox-header p {
+  margin: 0;
+  color: rgba(248, 241, 232, 0.7);
+}
+
+.inbox-loading {
+  margin: 0;
+  color: rgba(248, 241, 232, 0.8);
+}
+
+.inbox-empty {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.inbox-empty span {
+  color: rgba(248, 241, 232, 0.6);
+  font-size: 0.9rem;
+}
+
+.inbox-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.message-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeUp 0.45s ease both;
+}
+
+.message-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(248, 241, 232, 0.55);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.meta-value {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.message-body {
+  margin-bottom: 1rem;
+}
+
+.cipher-label {
+  margin: 0 0 0.4rem;
+  color: rgba(248, 241, 232, 0.65);
+  font-size: 0.9rem;
+}
+
+.cipher-text {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: rgba(248, 241, 232, 0.9);
+  word-break: break-all;
+}
+
+.message-decrypted {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.plain-text {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: #fef7ef;
+}
+
+.message-button {
+  border: 1px solid rgba(248, 241, 232, 0.4);
+  background: transparent;
+  color: #f8f1e8;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.message-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message-button:not(:disabled):hover {
+  background: #f8f1e8;
+  color: #0b1c2d;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
